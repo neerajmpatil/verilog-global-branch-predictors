@@ -1,0 +1,22 @@
+===============================================================
+                 Branch Prediction Results
+===============================================================
+Total branches simulated: 6000
+
+Predictor    Mispredicts    Mispredict Rate    Hit Rate
+---------    -----------    ---------------    --------
+gpredict        1011          16.85%            83.15%
+gselect         1009          16.82%            83.18%
+gshare          1011          16.85%            83.15%
+===============================================================
+
+Summary:
+This simulation compares three global-history branch predictors:
+gpredict, gselect, and gshare. Each predictor uses a 4-bit Global
+History Register, a 16-entry Branch History Table, and 2-bit saturating
+counters.
+
+The results show that all three predictors achieve approximately the
+same accuracy on this nested-loop branch trace. The similar performance
+is caused by aliasing from the limited 4-bit history length and the
+specific PC bit patterns of the two branches in the benchmark.
